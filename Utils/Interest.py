@@ -17,7 +17,6 @@ class Interest():
     def SimpleInterestF(self):
         """
         Calculate simple interest (final value)
-        Formula: Interest = Price * rate * time
         :return: None
         """
         self.interest = self.init_principle * self.rate * self.time
@@ -30,4 +29,18 @@ class Interest():
         """
         self.init_principle = self.final_principle/(1+self.rate*self.time)
 
+    def CompoundInterestF(self):
+        """
+        Calculate Compound Interest (final value)
+        :return:
+        """
+        self.final_principle = self.init_principle*(1+self.rate)**self.time
+        self.interest = self.final_principle-self.init_principle
+
+    def CompoundInterestI(self):
+        """
+        Calculate Compound Interest (initial value)
+        :return:
+        """
+        self.init_principle = self.final_principle/(1+self.rate)**self.time
 
